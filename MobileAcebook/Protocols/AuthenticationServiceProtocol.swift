@@ -1,10 +1,14 @@
 //
 //  AuthenticationServiceProtocol.swift
-//  MobileAcebook
+//  Acebook
 //
-//  Created by Josué Estévez Fernández on 01/10/2023.
+//  Created by Fawaz Tarar on 19/02/2024.
 //
 
-public protocol AuthenticationServiceProtocol {
-    func signUp(user: User) -> Bool
+import Foundation
+
+protocol AuthenticationServiceProtocol {
+    func signUp(email: String, password: String, completion: @escaping (Result<String, Error>) -> Void)
+    func login(email: String, password: String, completion: @escaping (Result<String, Error>) -> Void)
 }
+
